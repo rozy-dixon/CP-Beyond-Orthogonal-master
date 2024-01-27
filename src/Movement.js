@@ -16,6 +16,8 @@ class Movement extends Phaser.Scene {
     create() {
         this.cameras.main.setBackgroundColor(0xDDDDDD)
         // create animation
+        // I did what made sense to me to finish the idle and walk animations but it always goes to the down idle when it stops
+        // so I think I did it wrong :/
         this.anims.create({
             key: 'idle-down',
             frameRate: 0,
@@ -32,6 +34,60 @@ class Movement extends Phaser.Scene {
             frames: this.anims.generateFrameNumbers('character', {
                 start: 0,
                 end: 2
+            })
+        })
+        this.anims.create({
+            key: 'idle-left',
+            frameRate: 0,
+            repeat: -1,
+            frames: this.anims.generateFrameNumbers('character', {
+                start: 4,
+                end: 4
+            })
+        })
+        this.anims.create({
+            key: 'walk-left',
+            frameRate: 5,
+            repeat: -1,
+            frames: this.anims.generateFrameNumbers('character', {
+                start: 3,
+                end: 5
+            })
+        })
+        this.anims.create({
+            key: 'idle-right',
+            frameRate: 0,
+            repeat: -1,
+            frames: this.anims.generateFrameNumbers('character', {
+                start: 7,
+                end: 7
+            })
+        })
+        this.anims.create({
+            key: 'walk-right',
+            frameRate: 5,
+            repeat: -1,
+            frames: this.anims.generateFrameNumbers('character', {
+                start: 6,
+                end: 8
+            })
+        })
+        this.anims.create({
+            key: 'idle-up',
+            frameRate: 0,
+            repeat: -1,
+            frames: this.anims.generateFrameNumbers('character', {
+                start: 10,
+                end: 10
+            })
+        })
+        this.anims.create({
+            key: 'walk-up',
+            frameRate: 5,
+            repeat: -1,
+            frames: this.anims.generateFrameNumbers('character', {
+                start: 9,
+                end: 11
             })
         })
         // [ ] fill animations
